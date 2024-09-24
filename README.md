@@ -8,13 +8,16 @@ Instrucciones para automatizar el encendido y apagado de una pc linux + enviar u
 1) Entrar a la UEFI/BIOS de nuestra PC y Checkear los modos de arranque que tiene la motherboard.
    -- para que funcione tenemos que tener la opción RTC Alarm, o similares
      -- configurar el RTC alarm correctamente (o sea, indicando a que hora queremos que se apague).
-3)  Configurar MAILUTILS.
+2)  Configurar MAILUTILS.
       -- ver video/preguntar a chatGPT
-4)  Crear SCRIPT .sh que maneje la lógica del envio de mail y el apagado automático.
+    
+3)  Crear SCRIPT .sh que maneje la lógica del envio de mail y el apagado automático.
       -- ver script .sh más abajo.
-5) <<opcional, recomiendo pasar al paso 6>>  Configuarar un demonio/servicio para que se ejecute el script cuando nosotros le indiquemos.
+    
+4) <<opcional, recomiendo pasar al paso 5>>  Configuarar un demonio/servicio para que se ejecute el script cuando nosotros le indiquemos.
       -- el demonio tiene la extensión .service
-6)  Crear un archivo desktop para que se ejecute automáticamente cuando inicia nuestro escritorio.
+   
+5)  Crear un archivo desktop para que se ejecute automáticamente cuando inicia nuestro escritorio.
 7)  Hacer el archivo .sh ejecutable
 8)  Dar permiso al usuario para el apagado:
       -- necesitamos modificar los permisos de sudo para permitir que el usuario ejecute el comando shutdown sin necesidad de contraseña. Para hacer esto:

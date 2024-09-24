@@ -26,25 +26,25 @@ Instrucciones para automatizar el encendido y apagado de una pc linux + enviar u
 -----------------------------------------------------------
 ### enviomail.sh
 #!/bin/bash
-# Logging
+
 exec 1>/tmp/enviomail.log 2>&1
 set -x
 echo "Script iniciado: $(date)"
-# Mostrar notificación
+
 zenity --info --text="El sistema enviará un correo y se apagará en 1 minuto." --title="Aviso de inicio" &
-# Esperar 30 segundos
+
 sleep 30
-# Configuración del correo
+
 RECIPIENT="MAILDEDESTINO.com"
 SUBJECT="PC Linux iniciada"
 BODY="Tu PC Linux se ha iniciado correctamente."
-# Enviar correo
+
 if echo "$BODY" | mail -s "$SUBJECT" "$RECIPIENT"; then
     echo "Correo enviado exitosamente."
 else
     echo "Error al enviar el correo."
 fi
-# Programar apagado
+
 sudo /sbin/shutdown -h +1 "El sistema se apagará en 1 minuto"
 echo "Script finalizado: $(date)"
 
